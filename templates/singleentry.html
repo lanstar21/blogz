@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="post">
+    <div class="title">
+        {{post.db_title}}
+    </div>
+    <div class="body">
+        <p>{{post.db_body}}</p>
+        <p class="date">Posted by <a href="/blog?id={{post.author_id}}">{{post.author.username}}</a> at: {{post.db_date}}</p>
+    </div>
+    <form action="/del-entry" method="POST">
+        <input type="hidden" name="post_id" value="{{post.id}}">
+        {% if post.author_id == loggedin.id %}
+        <button class="deleted tooltip" type="submit">X
+            <span class="tooltiptext">Delete entry</span>
+        </button>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

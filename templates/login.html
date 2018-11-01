@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/login" method="POST">
+<table>
+    <tr>
+        <td colspan="2"><h2>Login Everyone!</h2></td>
+    </tr>
+    <tr>
+        <td class="label">Username:</td>
+        <td><input name="user_login" type="text" value="" tabindex="1" autofocus></td>
+    </tr>
+    <tr>
+        <td class="label">Password:</td>
+        <td><input name="user_pass" type="password" tabindex="2">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button class="login" type="submit" tabindex="3">Login</button>
+        </td>
+    </tr>
+</table>
+</form>
+
+{% endblock %}

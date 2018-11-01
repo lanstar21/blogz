@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Josh's Blog</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/newentry">Add New Blog Entry</a> |
+        <a href="/">View All Blog Entries</a><br>
+        <a href="/home">View Authors</a> ||
+        {% if loggedin != False %}
+            <strong>{{loggedin.username}}</strong>(<a href="/logout">Logout</a> || <a href="/selfpost">View Your Posts</a>)
+        {% else %}
+            <a href="/login">User Login</a> ||
+            <a href="/signup">Create Account</a>
+        {% endif %}
+    </div>
+
+    <h1>Josh's Cool Blog Site</h1>
+
+    <div style="height: 60px;">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% for category,message in messages %}
+        <span class="{{category}}">{{message}}</span>
+        {% endfor %}
+    {% endwith %}
+    </div>
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>

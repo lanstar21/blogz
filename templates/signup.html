@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/signup" method="POST">
+<table>
+    <tr>
+        <td colspan="2"><h2>Create a Cool Account</h2></td>
+    </tr>
+    <tr>
+        <td class="label">Username:</td>
+        <td><input name="new_user" type="text" value="" tabindex="1" autofocus></td>
+    </tr>
+    <tr>
+        <td class="label">Password:</td>
+        <td><input name="new_pass" type="password" tabindex="3"></td>
+    </tr>
+    <tr>
+        <td class="label">Re-enter Password:</td>
+        <td><input name="new_pass_2" type="password" tabindex="4"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button class="login" type="submit" tabindex="5">Register here!</button>
+        </td>
+    </tr>
+
+</table>
+</form>
+
+{% endblock %}

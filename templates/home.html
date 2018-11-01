@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td><h2>Contributing Authors</h2></td>
+    </tr>
+{% for author in author_list %}
+    <tr>
+        <td class>
+            <div class="title authors">
+                <a href="/blog?id={{author.id}}">{{author.username}}</a>
+            </div>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

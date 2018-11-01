@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/add-entry" method="POST">
+<table>
+    <tr>
+        <td colspan="3"><h2>Add A New Blog Entry</h2></td>
+    </tr>
+    <tr>
+        <td class="label">Title:</td>
+        <td><input name="title" type="text" value="{{entry_title}}" tabindex="1" autofocus></td>
+        <td>
+            <button type="submit" tabindex="3">Post entry</button>
+            <button type="reset" tabindex="4">Start over</button>
+        </td>
+    </tr>
+    <tr>
+        <td class="label">Blog entry:</td>
+        <td><input name="body" type="text" value="{{entry_body}}" tabindex="1" style="height: 120px;"></td>
+    </tr>
+</table>
+</form>
+
+{% endblock %}
